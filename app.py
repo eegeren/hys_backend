@@ -73,3 +73,12 @@ def send_announcement(data: Notification):
         "başarılı": success,
         "başarısız": failed
     }
+
+# --- LOCAL TEST KISMI ---
+if __name__ == "__main__":
+    try:
+        import uvicorn
+        print("✅ uvicorn bulundu. Sunucu başlatılıyor...")
+        uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    except ImportError:
+        print("❌ uvicorn modülü yüklü değil. Lütfen requirements.txt dosyasına ekleyin.")
